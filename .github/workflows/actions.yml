@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+      - 'feature/*' #Matches feature/featA 
+      - 'feature/**'
   # repository_dispatch:
   #   types: [build]
   # schedule:
