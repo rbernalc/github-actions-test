@@ -19,7 +19,13 @@ jobs:
         uses: docker://node:18-alpine3.15
         with:
           entrypoint: /usr/local/bin/node
-          args: -v    
+          args: -v
+      - uses: actions/checkout@v1
+      - name: Step with my script
+        uses: docker://node:18-alpine3.15
+        with:
+          entrypoint: ./script.sh
+          args: "Some string" 
   node-docker:
     runs-on: ubuntu-latest
     services:
