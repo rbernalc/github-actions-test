@@ -22,7 +22,6 @@ echo "::endgroup"
 #Export and enviroment variable
 echo "::set-env name=HELLO::hello"
 
-
 #This can be done also in python for example but using print instead of echo
 #print "::debug ::Debug Message"
 echo "Hello $1"
