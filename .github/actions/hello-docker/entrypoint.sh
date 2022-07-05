@@ -8,6 +8,7 @@ echo "::error ::Error Message"
 #Set a secret (what will mask a string)
 echo "::add-mask::$1"
 
+
 #show time
 time=$(date)
 echo "::set-output name=time::$time"
