@@ -1,0 +1,17 @@
+name: Hello World
+author: Rodrigo Bernal
+description: First action created for github using docker
+inputs:
+  who-to-greet: "Who to greet"
+  required: true
+  default: Rodrigo
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  # entrypoint:
+  args:
+    - ${{ inputs.who-to-greet }}
+    

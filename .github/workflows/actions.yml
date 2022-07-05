@@ -31,7 +31,15 @@ jobs:
         # git clone git@github:$GITHUB_REPOSITORY
         # git checkout $GITHUB_SHA
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+      - name: Creating action with docker
+        uses: ./.github/actions/hello-docker
+        id: hello
+        with:
+          who-to-greet: "World"
+      - run: |
+          echo "Time: ${{ steps.hello.outputs.time }}"
+          echo $HELLO
       - name: List Files after checkout
         run: |
           pwd
