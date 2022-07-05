@@ -3,9 +3,9 @@ author: Rodrigo Bernal
 description: 'First action created for github using docker'
 inputs:
   who-to-greet: # id of input
-  description: 'Who to greet'
-  required: true
-  default: 'Rodrigo'
+    description: 'Who to greet'
+    required: true
+    default: 'Rodrigo'
 outputs:
   time: #id of input
     description: "The greeting time"
