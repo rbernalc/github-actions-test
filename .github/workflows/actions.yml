@@ -15,12 +15,12 @@ on:
   # push:
   # pull_request:
   #   types: [closed, assigned, opened, reopened]
-
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        run: ls
       - uses: ./github/actions/hello-docker
         id: hello
         with:      
