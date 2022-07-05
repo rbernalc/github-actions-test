@@ -1,12 +1,13 @@
-name: Hello World
+name: 'Hello World'
 author: Rodrigo Bernal
-description: First action created for github using docker
+description: 'First action created for github using docker'
 inputs:
-  who-to-greet: "Who to greet"
+  who-to-greet: # id of input
+  description: 'Who to greet'
   required: true
-  default: Rodrigo
+  default: 'Rodrigo'
 outputs:
-  time:
+  time: #id of input
     description: "The greeting time"
 runs:
   using: "docker"
