@@ -20,34 +20,11 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List Files
-        run: |
-          pwd
-          ls
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
-        # git clone git@github:$GITHUB_REPOSITORY
-        # git checkout $GITHUB_SHA
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Creating action with docker
-        uses: ./.github/actions/hello-docker
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/hello-docker
         id: hello
-        with:
+        with:      
           who-to-greet: "World"
       - run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
           echo $HELLO
-      - name: List Files after checkout
-        run: |
-          pwd
-          ls -a
-      - name: Simple JS Action
-        id: greet
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: Mariana
-      - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time}}"
