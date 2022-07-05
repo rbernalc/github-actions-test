@@ -5,7 +5,7 @@ on:
   #pull_request:
     branches:
       - master
-      - 'feature/*' #Matches feature/featA 
+      - 'feature/*' #Matches feature/featA
       - 'feature/**'
   # repository_dispatch:
   #   types: [build]
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/hello-docker
+      - uses: ./github/actions/hello-docker
         id: hello
         with:      
           who-to-greet: "World"
