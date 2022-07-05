@@ -19,11 +19,12 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./.github/actions/hello-docker
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello docker
         id: hello
+        uses: ./.github/actions/hello-docker
         with:      
           who-to-greet: "World"
-      - run: |
-          echo "Time ${{ steps.hello.outputs.time }}"
-          echo $HELLO
+      - name: Show time
+        run: echo "Time ${{ steps.hello.outputs.time }}"
