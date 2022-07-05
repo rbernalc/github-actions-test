@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ls
+      - run: ls -a
       - uses: ./github/actions/hello-docker
         id: hello
         with:      
