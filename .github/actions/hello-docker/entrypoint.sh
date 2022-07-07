@@ -26,4 +26,4 @@ echo "::endgroup::Final Message"
 echo "::add-mask::$1"
 
 #Show what happen with the mask
-echo "Hello $1"
+#echo "Hello $1"
