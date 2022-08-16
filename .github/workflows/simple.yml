@@ -1,29 +1,21 @@
-name: Shell Commands
+name: simple
 
-on: [pull_request]
-
+on:
+  push:
 jobs:
-  run-shell-command:
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
-        run: echo "Hello World"
-      - name: multiline script
+      - name: list files
         run: |
-          node -v
-          npm -v
-      - name: python Commands
+          pwd
+          ls -l
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: list files 2
         run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  run-windows-commands:
-    runs-on: windows-latest
-    needs: ['run-shell-command']
-    steps:
-      - name: Directory PowerShell
-        run: Get-Location
-      - name: Directory Bash
-        run: pwd
-        shell: bash
-          
+          pwd
+          ls -l  
+      - name: Hello docker
+        id: hello
+        uses: ./.github/actions/hello-docker
