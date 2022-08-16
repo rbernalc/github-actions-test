@@ -10,12 +10,17 @@ jobs:
         run: |
           pwd
           ls -l
+          ./script.sh
       - name: Checkout
+        if: always()
         uses: actions/checkout@v3
       - name: list files 2
+        if: always()
         run: |
           pwd
           ls -l  
+          ./script.sh
       - name: Hello docker
+        if: always()
         id: hello
         uses: ./.github/actions/hello-docker
