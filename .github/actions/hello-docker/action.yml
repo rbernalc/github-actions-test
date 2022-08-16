@@ -5,7 +5,7 @@ inputs:
   who-to-greet: # id of input
     description: 'Who to greet'
     required: true
-    default: 'Rodrigo'
+    default: 'Rodrigo B'
 outputs:
   time: #id of input
     description: "The greeting time"
